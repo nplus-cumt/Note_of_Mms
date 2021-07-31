@@ -1,0 +1,1 @@
+# Note_of_JavaScript
