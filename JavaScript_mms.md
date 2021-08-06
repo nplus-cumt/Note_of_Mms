@@ -2,7 +2,7 @@
 
 > **写在前面🦄**
 >
-> 完结撒花~
+> 第2章是JS里面最最基础的命令与语法
 >
 > 根据 [B站尚硅谷JavaScript基础](https://www.bilibili.com/video/BV1YW411T7GX?p=1) 做的笔记
 
@@ -75,7 +75,12 @@ console.log("c= "+c);
 ##### 	超链接   
 
 ```css
-<!--不方便维护，不推荐使用 ->属于结构与行为耦合--><a href>啥也没有</a><a href ="javaScript:;">也是啥也没有</a><a href ="javaScript:alert('click we');alert('click again')">注意写语言类型，多行命令要加分号</a><a href="123c.cpp" >可以打开文件</a><a href="https://www.baidu.com/">可以打开网页</a>
+<!--不方便维护，不推荐使用 ->属于结构与行为耦合-->
+<a href>啥也没有</a>
+<a href ="javaScript:;">也是啥也没有</a>
+<a href ="javaScript:alert('click we');alert('click again')">注意写语言类型，多行命令要加分号</a>
+<a href="123c.cpp" >可以打开文件</a>
+<a href="https://www.baidu.com/">可以打开网页</a>
 ```
 
 
@@ -134,7 +139,8 @@ str = "我说：\"今天天气真好~\"" //才能打出来我说："今天天气
 ​	检查数据类型：
 
 ```js
-var a = null;console.log(typeof a);
+var a = null;
+console.log(typeof a);
 ```
 
 - ###### 数值 Number
@@ -167,7 +173,8 @@ var a = null;console.log(typeof a);
 是属性，所以调用的时候不需要加 ( )
 
 ```js
-var ss = "string";var len = ss.length;
+var ss = "string";
+var len = ss.length;
 ```
 
 ##### charAt( )
@@ -175,7 +182,8 @@ var ss = "string";var len = ss.length;
 根据索引，返回字符串中指定位置的字符
 
 ```js
-var ss = "string";var result = ss.charAt(1);//"t"
+var ss = "string";
+var result = ss.charAt(1);//"t"
 ```
 
 charCodeAt( ) 类似 不过返回的是Unicode编码值
@@ -193,7 +201,8 @@ var result = String.fromCharCode(20045);//"乍"
 连接两个或多个字符串
 
 ```js
-var str = "hello";var result = str.concat("你好","hi");
+var str = "hello";
+var result = str.concat("你好","hi");
 ```
 
 ##### indexof( ) lastindexof( )
@@ -209,7 +218,9 @@ indexof( )从前往后   lastindexof( )从后往前
 可以通过第二个参数指定开始查找的位置
 
 ```js
-var str = "hello";var result1 = str.indexof("l");				//2var result2 = str.indexof("l",result + 1);	 //3
+var str = "hello";
+var result1 = str.indexof("l");				//2
+var result2 = str.indexof("l",result + 1);	 //3
 ```
 
 ##### search( )
@@ -235,7 +246,9 @@ var result = str.search(/a[bef]c/);//查找abc或aec或afc
 但我们可以设置正则表达式设置为全局匹配模式，这时候会把匹配到的内容封装到一个数组里面返回，即使只能查询到一个结果
 
 ```js
-var str = "1a2b3c";var result = str.match(/[a-z]/ig);//result[0] == a  ,  result == ["a","b","c"]
+var str = "1a2b3c";
+var result = str.match(/[a-z]/ig);
+//result[0] == a  ,  result == ["a","b","c"]
 ```
 
 ##### replace( )
@@ -259,13 +272,17 @@ result = str.replace(/[a-z]/ig,"");//去掉所有字母
 将一个字符串拆分成一个数组
 
 ```js
-str = "abc,bcd,jkl,l";var result1 = str.split(",");	//["abc","bcd","jkl","l"]var result2 = str.split();		//["abc,bcd,jkl,l"]var result3 = str.split("");	//["a","b","c"……]
+str = "abc,bcd,jkl,l";
+var result1 = str.split(",");	//["abc","bcd","jkl","l"]
+var result2 = str.split();		//["abc,bcd,jkl,l"]
+var result3 = str.split("");	//["a","b","c"……]
 ```
 
 使用正则来拆分
 
 ```JS
-var str = "1s2d3";var result = str.split(/[A-z]/);//["1","2","3"]
+var str = "1s2d3";
+var result = str.split(/[A-z]/);//["1","2","3"]
 ```
 
 
@@ -283,7 +300,10 @@ slice( start , end )
 索引可以传递一个负值，如果传递一个负值，则从后往前计算
 
 ```js
-var str = "01234567";var result1 = str.slice(1,4); //"123"var result2 = str.slice(6);   //"67"var result3 = str.ice(5,-1);//"56"
+var str = "01234567";
+var result1 = str.slice(1,4); //"123"
+var result2 = str.slice(6);   //"67"
+var result3 = str.ice(5,-1);//"56"
 ```
 
 ##### substring( )
@@ -297,7 +317,8 @@ substring( start , end )
 还会自动调整参数位置，保证前面的<后面的
 
 ```js
-var str = "01234567";var result = str.ice(5,-1);//"01234"
+var str = "01234567";
+var result = str.ice(5,-1);//"01234"
 ```
 
 ##### substr( )
@@ -307,7 +328,8 @@ substr( start , num )
 第二个参数的截取的长度
 
 ```js
-var str = "01234567";var result = str.substr(5,2);//"56"
+var str = "01234567";
+var result = str.substr(5,2);//"56"
 ```
 
 
@@ -323,13 +345,15 @@ var str = "01234567";var result = str.substr(5,2);//"56"
 1. **+""方法✔**
 
    ```js
-   var c = 123 ;c = c + "" ;//实际也是调用String()函数
+   var c = 123 ;
+   c = c + "" ;//实际也是调用String()函数
    ```
 
 2. 调用 toString() 方法
 
    ```js
-   var a = 123;a = a.toString();
+   var a = 123;
+   a = a.toString();
    ```
 
    ​	不影响原来的变量 会以转换的结果返回
@@ -341,7 +365,8 @@ var str = "01234567";var result = str.substr(5,2);//"56"
 3. **调用 String() 方法**✔
 
    ```js
-   var a = 123;a = String(a);
+   var a = 123;
+   a = String(a);
    ```
 
    ​	不影响原来的变量 会以转换的结果返回
@@ -359,7 +384,11 @@ var str = "01234567";var result = str.substr(5,2);//"56"
 - **-0  *1  /1  +** ✔
 
   ```js
-  var a = b = c = d = "123";a = a - 0;b = b * 1;c = c / 1;d = + d ;
+  var a = b = c = d = "123";
+  a = a - 0;
+  b = b * 1;
+  c = c / 1;
+  d = + d ;
   ```
 
   ​	原理和 Number() 一样
@@ -371,7 +400,8 @@ var str = "01234567";var result = str.substr(5,2);//"56"
 - **调用 Number() 方法**✔
 
   ```js
-  var a = "123.456";a = Number(a);
+  var a = "123.456";
+  a = Number(a);
   ```
 
   - string：
@@ -391,7 +421,9 @@ var str = "01234567";var result = str.substr(5,2);//"56"
 - **调用 parseInt() parseFloat)方法**✔
 
   ```js
-  a = "123.89px567";b = parseInt(a);//b=123c = parseFloat(a);//c=123.89
+  a = "123.89px567";
+  b = parseInt(a);//b=123
+  c = parseFloat(a);//c=123.89
   ```
 
   1. 适用于string类型数字+非数字混杂
@@ -403,7 +435,9 @@ var str = "01234567";var result = str.substr(5,2);//"56"
   4. 对非string使用此方法->先转换为string后操作
 
      ```js
-     //可以用于浮点型->整形a = 123.45；a = paiseInt(a);//a=123
+     //可以用于浮点型->整形
+     a = 123.45；
+     a = paiseInt(a);//a=123
      ```
 
      **如果要转换成其他进制**
@@ -419,7 +453,8 @@ var str = "01234567";var result = str.substr(5,2);//"56"
   > - 16进制的数字->0x开头    (输出会按照十进制输出)
 
   ```js
-  a = "08";//8进制a = paiseInt(a,8);//a=10
+  a = "08";//8进制
+  a = paiseInt(a,8);//a=10
   ```
 
 ##### 转换为Boolean
@@ -433,7 +468,8 @@ var str = "01234567";var result = str.substr(5,2);//"56"
 - 调用 Boolean() 方法✔
 
   ```js
-  a = "123.456";a = Boolean(a);
+  a = "123.456";
+  a = Boolean(a);
   ```
 
   - string：空字符串->false
@@ -455,7 +491,10 @@ var str = "01234567";var result = str.substr(5,2);//"56"
 ​		栈内存里：变量：a   值：123
 
 ```js
-var a = 123;var b = a;a++;//a=124 b=123
+var a = 123;
+var b = a;
+a++;
+//a=124 b=123
 ```
 
 #### 引用数据类型😈
@@ -469,11 +508,26 @@ var a = 123;var b = a;a++;//a=124 b=123
 ​		堆内存里：name="哈利波特"……
 
 ```js
-var obj = new Object();obj.name = "哈利波特";var obj2 = obj;obj.name = "赫敏格兰杰";//obj.name == obj2.name == "赫敏格兰杰"
+var obj = new Object();
+obj.name = "哈利波特";
+
+var obj2 = obj;
+obj.name = "赫敏格兰杰";
+
+//obj.name == obj2.name == "赫敏格兰杰"
 ```
 
 ```js
-var obj = new Object();obj.name = "哈利波特";var obj2 = obj;obj.name = "赫敏格兰杰";obj2 = null;//断开obj与obj2的联系//obj.name == "赫敏格兰杰"//obj2.name == null
+var obj = new Object();
+obj.name = "哈利波特";
+
+var obj2 = obj;
+obj.name = "赫敏格兰杰";
+
+obj2 = null;//断开obj与obj2的联系
+
+//obj.name == "赫敏格兰杰"
+//obj2.name == null
 ```
 
 
@@ -483,7 +537,9 @@ var obj = new Object();obj.name = "哈利波特";var obj2 = obj;obj.name = "赫�
 ​	比如typeof就是运算符，可以获得一个值的类型
 
 ```js
-var a = 123;var result = typeof a;//result="Number"console.log(typeof result);//输出"string"
+var a = 123;
+var result = typeof a;//result="Number"
+console.log(typeof result);//输出"string"
 ```
 
 #### 运算符注意事项🍓
@@ -500,13 +556,16 @@ var a = 123;var result = typeof a;//result="Number"console.log(typeof result);//
   - 除➕加号❗❗
 
     ```js
-    a = "1" + 2 + 3 ;//"123"b = 1 + 2 + "3" ;//"33"c = +"1";//1 这里没有其他Number啦
+    a = "1" + 2 + 3 ;//"123"
+    b = 1 + 2 + "3" ;//"33"
+    c = +"1";//1 这里没有其他Number啦
     ```
 
   - 其他算术运算符
 
     ```js
-    a = 100 - "1";//99b = 100 * undefined; //NaN
+    a = 100 - "1";//99
+    b = 100 * undefined; //NaN
     ```
 
 - 比较运算符
@@ -514,13 +573,18 @@ var a = 123;var result = typeof a;//result="Number"console.log(typeof result);//
   ​	比较两个基本数据类型时，就是比较值
 
   ```js
-  "5"<"11"; // 用Unicode比较 从第一位开始逐位比较 因为都是string类型+"5"<"11"; // 即比较5<11
+  "5"<"11"; // 用Unicode比较 从第一位开始逐位比较 因为都是string类型
+  +"5"<"11"; // 即比较5<11
   ```
 
   ###### 	比较两个引用数据类型时，比较的是对象的内存地址🎃
 
   ```js
-  var obj1 = new Object();var obj2 = new Object();obj1.name = "JS";obj2.name = "JS";//obj1.name != obj2.name
+  var obj1 = new Object();
+  var obj2 = new Object();
+  obj1.name = "JS";
+  obj2.name = "JS";
+  //obj1.name != obj2.name
   ```
 
   
@@ -546,7 +610,10 @@ var a = 123;var result = typeof a;//result="Number"console.log(typeof result);//
 ​	和C++一模一样
 
 ```js
-var a = 1;if ( a === 1 ){ alert("yes"); }else if( a === 2 ) alert("no") ;else alert("none");
+var a = 1;
+if ( a === 1 ){ alert("yes"); }
+else if( a === 2 ) alert("no") ;
+else alert("none");
 ```
 
 #### switch语句
@@ -554,7 +621,14 @@ var a = 1;if ( a === 1 ){ alert("yes"); }else if( a === 2 ) alert("no") ;else al
 ​	和C++一模一样
 
 ```js
-switch(num){    case 1 : alert("是1");break;    default : alert("不是1");break;}switch(true){    case num===1  :alert("是1");break;    default : alert("不是1");break;}
+switch(num){
+    case 1 : alert("是1");break;
+    default : alert("不是1");break;
+}
+switch(true){
+    case num===1  :alert("是1");break;
+    default : alert("不是1");break;
+}
 ```
 
 #### while语句
@@ -562,7 +636,8 @@ switch(num){    case 1 : alert("是1");break;    default : alert("不是1");brea
 ​	和C++一模一样
 
 ```js
-while (true) {}do {} while (true);
+while (true) {}
+do {} while (true);
 ```
 
 #### for循环
@@ -586,17 +661,39 @@ for(var a = 0 ; a <= 5; a++) alert(a);
 - 在全局作用域中有一个全局对象window，代表的是浏览器的窗口
 
   ```js
-  //<script>var a = 10;console.log(a); //两句话等价console.log(window.a);function fun(){console.log("我是fun函数");}fun(); //两句话等价window.fun();alert("hello"); //两句话等价window.alert("hello");//</script>
+  //<script>
+  
+  var a = 10;
+  console.log(a); //两句话等价
+  console.log(window.a);
+  
+  function fun(){console.log("我是fun函数");}
+  fun(); //两句话等价
+  window.fun();
+  
+  alert("hello"); //两句话等价
+  window.alert("hello");
+  
+  //</script>
   ```
 
 - 看代码不说话
 
   ```js
-  //<script>    alert(a); //弹出undefined   var a = 123;//</script>
+  //<script> 
+     alert(a); //弹出undefined
+     var a = 123;
+  //</script>
   ```
 
   ```js
-  //<script>    fun();  //可以弹出a   function fun(){alert("a");}   fun2(); //不执行   var fun2 = function(){alert("b");}//</script>
+  //<script> 
+     fun();  //可以弹出a
+     function fun(){alert("a");}
+  
+     fun2(); //不执行
+     var fun2 = function(){alert("b");}
+  //</script>
   ```
 
   
@@ -610,7 +707,11 @@ for(var a = 0 ; a <= 5; a++) alert(a);
   如果全局作用域没有，则报错ReferenceError
 
   ```js
-  var a = 2;function fun(){    alert(a); //弹出undefined    var a = 1;}
+  var a = 2;
+  function fun(){
+      alert(a); //弹出undefined
+      var a = 1;
+  }
   ```
 
 - 在函数中访问全局变量可以用window
@@ -618,11 +719,25 @@ for(var a = 0 ; a <= 5; a++) alert(a);
 #### this🐰
 
 ```js
-name="Harry";var fun = function(){alert(this.name);}fun(); //弹出来Harryobj={    name:"Ron",    show:fun}obj.show();//弹出来Ron
+name="Harry";
+var fun = function(){alert(this.name);}
+fun(); //弹出来Harry
+obj={
+    name:"Ron",
+    show:fun
+}
+obj.show();//弹出来Ron
 ```
 
 ```js
-name="Harry";var fun = function(){alert(this.name);}obj={    name:"Ron",    show:fun()}obj.show;  //弹出来Harryobj.show();//弹出来Harry
+name="Harry";
+var fun = function(){alert(this.name);}
+obj={
+    name:"Ron",
+    show:fun()
+}
+obj.show;  //弹出来Harry
+obj.show();//弹出来Harry
 ```
 
 
@@ -632,7 +747,8 @@ name="Harry";var fun = function(){alert(this.name);}obj={    name:"Ron",    show
 直接赋值为null
 
 ```js
-var a = 1;a = null;
+var a = 1;
+a = null;
 ```
 
 
@@ -659,13 +775,32 @@ var a = 1;a = null;
 #### 创建对象
 
 ```js
-var obj1 = new Object (); var obj2 = {};var obj3 = {    name:"Ron",    school:{name:"Hogwarts"},    showName:function(){        console.log(obj3.name);    }    //Object里 } 前最后一个 , 可有可无 最好有};
+var obj1 = new Object (); 
+
+var obj2 = {};
+
+var obj3 = {
+    name:"Ron",
+    school:{name:"Hogwarts"},
+    showName:function(){
+        console.log(obj3.name);
+    }
+    //Object里 } 前最后一个 , 可有可无 最好有
+};
 ```
 
 ##### 用工厂方法创建对象
 
 ```js
-function createPerson( name , age ){    var obj = new Object();    obj.name = name ;    obj.age = age ;    obj.showname = function(){alert( this.name );},    alert("create")    return obj; //这句别忘了}var obj = createPerson( "Hermione" , 12 );
+function createPerson( name , age ){
+    var obj = new Object();
+    obj.name = name ;
+    obj.age = age ;
+    obj.showname = function(){alert( this.name );},
+    alert("create")
+    return obj; //这句别忘了
+}
+var obj = createPerson( "Hermione" , 12 );
 ```
 
 ##### 用构造函数创建对象✔
@@ -673,7 +808,13 @@ function createPerson( name , age ){    var obj = new Object();    obj.name = na
 构造函数习惯上首字母大写，需要用new关键字来调用
 
 ```js
-function Person( name , age ){    this.name = name ;    this.age = age;    this.showname = fun,}function fun(){alert( this.name );};var harry = new Person( "harry" , 18 );
+function Person( name , age ){
+    this.name = name ;
+    this.age = age;
+    this.showname = fun,
+}
+function fun(){alert( this.name );};
+var harry = new Person( "harry" , 18 );
 ```
 
 注意  [prototype](#**prototype**🌺)  ❗❗
@@ -685,7 +826,9 @@ function Person( name , age ){    this.name = name ;    this.age = age;    this.
 JS对象的属性值可以是任意数据类型，甚至也可以是一个**对象**
 
 ```js
-obj.name = "JavaScript";console.log (obj.name);//如果对象没有该属性，不会报错而是返回undefineddelete obj.name;
+obj.name = "JavaScript";
+console.log (obj.name);//如果对象没有该属性，不会报错而是返回undefined
+delete obj.name;
 ```
 
 如果要使用特殊的属性名:✔
@@ -693,17 +836,23 @@ obj.name = "JavaScript";console.log (obj.name);//如果对象没有该属性，�
 ​		下面两段函数是等效的🦢
 
 ```js
-obj["123"] = 789; //对象["属性名"] = 属性值console.log (obj.["123"]);
+obj["123"] = 789; //对象["属性名"] = 属性值
+console.log (obj.["123"]);
 ```
 
 ```js
-var n = "123";obj[n] = 789; console.log (obj.[n]);
+var n = "123";
+obj[n] = 789; 
+console.log (obj.[n]);
 ```
 
 #### 枚举对象的属性
 
 ```js
-for( var n in obj ){    console.log(n);//()里面不能写obj.n    console.log(obj[n]);//和上面等价}//很像python里面的for
+for( var n in obj ){
+    console.log(n);//()里面不能写obj.n
+    console.log(obj[n]);//和上面等价
+}//很像python里面的for
 ```
 
 #### instanceof函数
@@ -719,13 +868,19 @@ console.log( harry instanceof Person );
 在我们直接在页面中打印一个对象，实际上输出的是 toString() 方法的返回值
 
 ```js
-var Luna = new Person( "Luna", "Ravenclaw" );console.log( Luna );console.log( Luna.toString() );//两者等价 都是[object Object]
+var Luna = new Person( "Luna", "Ravenclaw" );
+console.log( Luna );
+console.log( Luna.toString() );
+//两者等价 都是[object Object]
 ```
 
 可以为对象添加一个 toString() 方法
 
 ```js
-Luna.toString = function(){    return "Person[name="+this.name+",collage="+this.collage+"]"}//注意是用return方式返回console.log( Luna );//这次就是"Person[……]"
+Luna.toString = function(){
+    return "Person[name="+this.name+",collage="+this.collage+"]"
+}//注意是用return方式返回
+console.log( Luna );//这次就是"Person[……]"
 ```
 
 
@@ -739,7 +894,29 @@ Luna.toString = function(){    return "Person[name="+this.name+",collage="+this.
 #### 创建和调用函数
 
 ```js
-var fun = new Function("console.log('JS');");//很少这么用console.log(fun.prototype);//[object Object] 每个函数都有function fun2( a , b ){ //()里面可以加形参，也可不写    function fun4( a , b ){ //可以在函数内部再声明一个函数        console.log( a + b );    }    return fun4 ;//返回的是函数对象fun4}var fun3 = function(){     function fun5(){        console.log( "JS" );        return;//和不写return一样，都是返回undefined    }    return fun5() ;//返回的是fun5的返回值undefined    }fun();fun2(123,"hello",456);//456和没写一样//调用函数时，解析器不会检查实参的 类型 和 数量//所以要注意，是否有可能会接收到非法的参数//后面的多余实参不会被赋值
+var fun = new Function("console.log('JS');");//很少这么用
+console.log(fun.prototype);//[object Object] 每个函数都有
+
+function fun2( a , b ){ //()里面可以加形参，也可不写
+    function fun4( a , b ){ //可以在函数内部再声明一个函数
+        console.log( a + b );
+    }
+    return fun4 ;//返回的是函数对象fun4
+}
+
+var fun3 = function(){ 
+    function fun5(){
+        console.log( "JS" );
+        return;//和不写return一样，都是返回undefined
+    }
+    return fun5() ;//返回的是fun5的返回值undefined    
+}
+
+fun();
+fun2(123,"hello",456);//456和没写一样
+//调用函数时，解析器不会检查实参的 类型 和 数量
+//所以要注意，是否有可能会接收到非法的参数
+//后面的多余实参不会被赋值
 ```
 
 调用函数时要区分:
@@ -763,7 +940,16 @@ var fun = new Function("console.log('JS');");//很少这么用console.log(fun.pr
   原型对象相当于一个公共的区域，所有同一个类的实例都可以访问到这个原型对象
 
   ```js
-  function College(){}College.prototype.color = none;var Gryffindor = new College();var Ravenclaw = new College();Ravenclaw.__proto__.color = blue;alert(Gryffindor.__proto__ === Ravenclaw.__proto__);//truealert(Gryffindor.__proto__.color = none );//truealert(Ravenclaw.__proto__.color = blue);//true
+  function College(){}
+  College.prototype.color = none;
+  
+  var Gryffindor = new College();
+  var Ravenclaw = new College();
+  Ravenclaw.__proto__.color = blue;
+  
+  alert(Gryffindor.__proto__ === Ravenclaw.__proto__);//true
+  alert(Gryffindor.__proto__.color = none );//true
+  alert(Ravenclaw.__proto__.color = blue);//true
   ```
 
   |         College函数对象         |  值   |      |  原型对象(0x123) 名称  |  值  |
@@ -792,7 +978,10 @@ var fun = new Function("console.log('JS');");//很少这么用console.log(fun.pr
 ​			…………
 
 ```js
-function fun () {}alert(fun.__proto__.__proto__);//弹出[object Object]alert(fun.__proto__.__proto__.__proto__);//弹出nullalert(fun.__proto__.color);//弹出undefined
+function fun () {}
+alert(fun.__proto__.__proto__);//弹出[object Object]
+alert(fun.__proto__.__proto__.__proto__);//弹出null
+alert(fun.__proto__.color);//弹出undefined
 ```
 
 
@@ -802,7 +991,8 @@ hasOwnProperty()
 检查对象自身是否含有该属性，不检查prototype里面有没有
 
 ```js
-console.log( Gryffindor.hasOwnProperty("color") );//falseconsole.log( "color" in Gryffindor );//检查原型+自身 true
+console.log( Gryffindor.hasOwnProperty("color") );//false
+console.log( "color" in Gryffindor );//检查原型+自身 true
 ```
 
 
@@ -812,7 +1002,10 @@ console.log( Gryffindor.hasOwnProperty("color") );//falseconsole.log( "color" in
 定义完立即被调用，往往只执行一次
 
 ```js
-(function( a , b ){    alert("a = " + a );    alert("b = " + b );})( 123 , 456 );
+(function( a , b ){
+    alert("a = " + a );
+    alert("b = " + b );
+})( 123 , 456 );
 ```
 
 
@@ -829,7 +1022,32 @@ console.log( Gryffindor.hasOwnProperty("color") );//falseconsole.log( "color" in
 - apply( ) 需要将实参封装到一个数组中统一传递
 
 ```js
-function fun(){    alert(this);}var obj = {};fun();//弹出[object , Window]fun.call( obj );//弹出[object , Object]fun.apply( obj );//弹出[object , Object]var harry ={    name: "Harry",    showName: function(){        alert(this.name);    },    test: function( a , b ){        console(this.name + a + b );    }};var ron ={    name: "Ron";};harry.showName.apply(ron);//弹出Ronharry.test.call(ron,2,3);//ron23harry.test.apply(ron,[2,3]);//ron23
+function fun(){
+    alert(this);
+}
+
+var obj = {};
+
+fun();//弹出[object , Window]
+fun.call( obj );//弹出[object , Object]
+fun.apply( obj );//弹出[object , Object]
+
+var harry ={
+    name: "Harry",
+    showName: function(){
+        alert(this.name);
+    },
+    test: function( a , b ){
+        console(this.name + a + b );
+    }
+};
+var ron ={
+    name: "Ron";
+};
+
+harry.showName.apply(ron);//弹出Ron
+harry.test.call(ron,2,3);//ron23
+harry.test.apply(ron,[2,3]);//ron23
 ```
 
 
@@ -851,7 +1069,13 @@ arguments是一个类数组对象，但不是真正的 ~~数组~~
 - 有一个属性：callee   ->  对应当前的函数对象
 
 ```js
-function fun(){    console.log(argument[0]);    console.log(argument.length);    console.log(argument.callee == fun );}fun("hello",true);//"hello",2,true
+function fun(){
+    console.log(argument[0]);
+    console.log(argument.length);
+    console.log(argument.callee == fun );
+}
+fun("hello",true);
+//"hello",2,true
 ```
 
 
@@ -867,7 +1091,15 @@ function fun(){    console.log(argument[0]);    console.log(argument.length);   
 #### 创建数组
 
 ```js
-var arr = new Array();arr[0] = 1;alert(arr);//弹出来1 不是地址var arr2 = [5];//数组只有一个元素5var arr3 = [1,"hello",null];var arr4 = new Array(10);//创建一个长度为10的数组var arr5 = new Array(10,"hello",null);
+var arr = new Array();
+arr[0] = 1;
+alert(arr);//弹出来1 不是地址
+
+var arr2 = [5];//数组只有一个元素5
+var arr3 = [1,"hello",null];
+
+var arr4 = new Array(10);//创建一个长度为10的数组
+var arr5 = new Array(10,"hello",null);
 ```
 
 #### 数组的length
@@ -875,7 +1107,9 @@ var arr = new Array();arr[0] = 1;alert(arr);//弹出来1 不是地址var arr2 = 
 数组的最大索引 +1 
 
 ```js
-arr[10] = 8;//此时arr.length == 11arr.length = 10;//修改length值来修改数组arr[arr.length] = 70;//向数组这个队列最后push一个元素
+arr[10] = 8;//此时arr.length == 11
+arr.length = 10;//修改length值来修改数组
+arr[arr.length] = 70;//向数组这个队列最后push一个元素
 ```
 
 if （修改的 length > 大于原长度）多出的部分空出来
@@ -891,7 +1125,10 @@ if （修改的 length < 大于原长度）多余的元素会被删除
 向数组 **最后** ==添加== 函数，返回值为数组新的长度
 
 ```js
-var arr = ["Harry"];arr.push( "Ron","Jenny" );var result = arr.push( "Hermione" );//result == 4//arr == ["Harry","Ron","Jenny","Hermione"]
+var arr = ["Harry"];
+arr.push( "Ron","Jenny" );
+var result = arr.push( "Hermione" );//result == 4
+//arr == ["Harry","Ron","Jenny","Hermione"]
 ```
 
 ##### pop( )
@@ -899,7 +1136,10 @@ var arr = ["Harry"];arr.push( "Ron","Jenny" );var result = arr.push( "Hermione" 
 从数组 **最后** ==删除== 函数，返回值为删除的那个元素值
 
 ```js
-var arr = ["Harry" , "Ron" . "Hermione"];var result = arr.pop();  //result == "Hermione"arr.pop();//arr == ["Harry"]
+var arr = ["Harry" , "Ron" . "Hermione"];
+var result = arr.pop();  //result == "Hermione"
+arr.pop();
+//arr == ["Harry"]
 ```
 
 ##### unshift( )
@@ -907,7 +1147,10 @@ var arr = ["Harry" , "Ron" . "Hermione"];var result = arr.pop();  //result == "H
 向数组 **开头** ==添加== 元素，返回值为数组新的长度
 
 ```js
-var arr = ["Harry"];arr.unshift( "Ron","Jenny" );var result = arr.unshift( "Hermione" );//result == 4//arr == ["Hermione","Ron","Jenny","Harry"]
+var arr = ["Harry"];
+arr.unshift( "Ron","Jenny" );
+var result = arr.unshift( "Hermione" );//result == 4
+//arr == ["Hermione","Ron","Jenny","Harry"]
 ```
 
 ##### shift( )
@@ -915,7 +1158,10 @@ var arr = ["Harry"];arr.unshift( "Ron","Jenny" );var result = arr.unshift( "Herm
 向数组 **开头** ==删除== 元素，返回值为删除的那个元素值
 
 ```js
-var arr = ["Harry" , "Ron" . "Hermione"];var result = arr.shift();  //result == "Harry"arr.shift();//arr == ["Hermione"]
+var arr = ["Harry" , "Ron" . "Hermione"];
+var result = arr.shift();  //result == "Harry"
+arr.shift();
+//arr == ["Hermione"]
 ```
 
 ##### forEach( )
@@ -927,7 +1173,16 @@ var arr = ["Harry" , "Ron" . "Hermione"];var result = arr.shift();  //result == 
 IE8及以下浏览器不支持
 
 ```js
-arr.forEach(function(){            console.log("JS");});arr.forEach(function(value , index , a) {                   //浏览器会在回调函数中传递三个参数    console.log(a);//第一个：当前正在遍历的元素    console.log(b);//第二个：当前正在遍历的元素索引012    console.log(a == arr);//第三个：就是正在遍历的数组    //加入有第四个之后->undefined});
+arr.forEach(function(){
+            console.log("JS");
+});
+arr.forEach(function(value , index , a) {
+                   //浏览器会在回调函数中传递三个参数
+    console.log(a);//第一个：当前正在遍历的元素
+    console.log(b);//第二个：当前正在遍历的元素索引012
+    console.log(a == arr);//第三个：就是正在遍历的数组
+    //加入有第四个之后->undefined
+});
 ```
 
 ##### slice( )
@@ -943,7 +1198,10 @@ slice( start , end )
 索引可以传递一个负值，如果传递一个负值，则从后往前计算
 
 ```js
-var arr = [0,1,2,3,4,5,6,7];var result1 = arr.slice(1,4); //[1,2,3]var result2 = arr.slice(6);   //[6,7]var result3 = arr.slice(5,-1);//[5,6]
+var arr = [0,1,2,3,4,5,6,7];
+var result1 = arr.slice(1,4); //[1,2,3]
+var result2 = arr.slice(6);   //[6,7]
+var result3 = arr.slice(5,-1);//[5,6]
 ```
 
 ##### splice( )
@@ -957,7 +1215,10 @@ splice( start ,  num , 杂七 , 杂八 …… )
 第三个及以后(可以没有) 传递新的元素，这些元素自动插入到 start 位置
 
 ```js
-var arr = [0,1,2,3,4,5,6,7];var result1 = arr.splice(3,0);//相当于没改var result2 = arr.splice(1,3,9); //[1,2,3]//arr = [0,9,4,5,6,7]
+var arr = [0,1,2,3,4,5,6,7];
+var result1 = arr.splice(3,0);//相当于没改
+var result2 = arr.splice(1,3,9); //[1,2,3]
+//arr = [0,9,4,5,6,7]
 ```
 
 ##### concat( )
@@ -965,7 +1226,11 @@ var arr = [0,1,2,3,4,5,6,7];var result1 = arr.splice(3,0);//相当于没改var r
 ==连接== 两个或多个数组，并且将新的数组返回，==不改变== 原数组
 
 ```js
-var arr1 = [0,1,2];var arr2 = [3,4,5];var arr3 = [6,7,8];var result = arr1.concat(arr2,arr3);//result == [0,1,2,3,4,5,6,7,8]
+var arr1 = [0,1,2];
+var arr2 = [3,4,5];
+var arr3 = [6,7,8];
+var result = arr1.concat(arr2,arr3);
+//result == [0,1,2,3,4,5,6,7,8]
 ```
 
 ##### join( )
@@ -977,7 +1242,10 @@ join( "连接符" )  括号里面的参数将作为元素的连接符
 如果没有，则默认使用  ==**, **== 作为连接符
 
 ```js
-var arr1 = [0,1,2];var result = arr1.join("");    //"012"var result2 = arr1.join("+");  //"0+1+2"var result3 = arr1.join();     //"0,1,2"
+var arr1 = [0,1,2];
+var result = arr1.join("");    //"012"
+var result2 = arr1.join("+");  //"0+1+2"
+var result3 = arr1.join();     //"0,1,2"
 ```
 
 ##### reserve( )
@@ -985,7 +1253,8 @@ var arr1 = [0,1,2];var result = arr1.join("");    //"012"var result2 = arr1.join
 ==翻转== 数组
 
 ```js
-var arr1 = [0,1,2];arr1.reserve();  //[2,1,0]
+var arr1 = [0,1,2];
+arr1.reserve();  //[2,1,0]
 ```
 
 ##### sort( )
@@ -994,7 +1263,11 @@ var arr1 = [0,1,2];arr1.reserve();  //[2,1,0]
 默认用Unicode编码进行排序 ( 纯数字要注意❗❗ )
 
 ```js
-var arr1 = ["b","c","a"];arr1.sort();  //["a","b","c"]var arr2 = [2,3,11];arr1.sort();  //[11,2,3]
+var arr1 = ["b","c","a"];
+arr1.sort();  //["a","b","c"]
+
+var arr2 = [2,3,11];
+arr1.sort();  //[11,2,3]
 ```
 
 对于**纯数字**和其他特殊需求：
@@ -1008,7 +1281,13 @@ var arr1 = ["b","c","a"];arr1.sort();  //["a","b","c"]var arr2 = [2,3,11];arr1.s
 ​		浏览器会根据回调函数的返回值决定元素的顺序，如果返回**大于**0，则元素交换位置 (   **等于0也不交换！！**)
 
 ```js
-var arr = [0,2,1];arr.sort(function(a,b){    return a-b;    //a-b是从小到大，b-a是从大到小});//arr == [0,1,2]
+var arr = [0,2,1];
+
+arr.sort(function(a,b){
+    return a-b;
+    //a-b是从小到大，b-a是从大到小
+});
+//arr == [0,1,2]
 ```
 
 
@@ -1022,7 +1301,9 @@ var arr = [0,2,1];arr.sort(function(a,b){    return a-b;    //a-b是从小到大
 当前代码执行的时间
 
 ```js
-var d = new Date();console.log(d);//Mon Aug 02 2021 22:28:02 GMT+0800 (GMT+08:00)
+var d = new Date();
+console.log(d);
+//Mon Aug 02 2021 22:28:02 GMT+0800 (GMT+08:00)
 ```
 
 指定时间对象
@@ -1030,7 +1311,9 @@ var d = new Date();console.log(d);//Mon Aug 02 2021 22:28:02 GMT+0800 (GMT+08:00
 ​	格式：月/日/年 时:分:秒
 
 ```js
-var d = new Date("9/10/2003");console.log(d);//Wed Sep 10 2003 00:00:00 GMT+0800 (GMT+08:00)
+var d = new Date("9/10/2003");
+console.log(d);
+//Wed Sep 10 2003 00:00:00 GMT+0800 (GMT+08:00)
 ```
 
 
@@ -1042,7 +1325,8 @@ var d = new Date("9/10/2003");console.log(d);//Wed Sep 10 2003 00:00:00 GMT+0800
 获取当前日期是几日 (日期)
 
 ```js
-var d = new Date();var date = d.getDate();
+var d = new Date();
+var date = d.getDate();
 ```
 
 ##### getDay( )
@@ -1050,7 +1334,8 @@ var d = new Date();var date = d.getDate();
 获取当前日期是星期几 返回一个0-6的值 其中0表示周日
 
 ```js
-var d = new Date();var day = d.getDay();
+var d = new Date();
+var day = d.getDay();
 ```
 
 ##### getMonth( )
@@ -1058,7 +1343,8 @@ var d = new Date();var day = d.getDay();
 获取当前日期的 ==月份-1==   返回一个0-11的值 其中 **0表示1月**
 
 ```js
-var d = new Date();var Month = d.getMonth();
+var d = new Date();
+var Month = d.getMonth();
 ```
 
 ##### getFullYear( )
@@ -1066,7 +1352,8 @@ var d = new Date();var Month = d.getMonth();
 获取当前日期的年份 返回的是四位数字 比如2021
 
 ```js
-var d = new Date();var year = d.getFullYear();
+var d = new Date();
+var year = d.getFullYear();
 ```
 
 ##### getTime( )
@@ -1074,7 +1361,8 @@ var d = new Date();var year = d.getFullYear();
 获取当前日期的的时间戳
 
 ```js
-var d = new Date();var time = d.getTime();
+var d = new Date();
+var time = d.getTime();
 ```
 
 时间戳： 本初子午线时间1/1/1970  0:0:0 到当前日期的**毫秒**数 ( 如果要用北京时间需要转换 )
@@ -1084,7 +1372,10 @@ var d = new Date();var time = d.getTime();
 ​				可以利用时间戳来测试代码执行的性能
 
 ```js
-var start = Date。now();//各种函数操作var end = Date.now();console.log((end-start)+"毫秒"）;
+var start = Date。now();
+//各种函数操作
+var end = Date.now();
+console.log((end-start)+"毫秒"）;
 ```
 
 
@@ -1194,7 +1485,8 @@ console.log(Math.sqrt(2));//1.41421……
 ​	调用完之后，再将其转换为基本数据类型
 
 ```js
-var s = 123;s = s.toString();//这里s被临时转换为对象
+var s = 123;
+s = s.toString();//这里s被临时转换为对象
 ```
 
 
@@ -1208,19 +1500,25 @@ JS中为我们提供了三个包装类：
 通过这三个包装类可以将基本数据类型的数据转换为对象
 
 ```js
-var num = new Number(3);console.log(typeof num);//objectnum.name = "NUM";//可以往里面添加属性
+var num = new Number(3);
+console.log(typeof num);//object
+num.name = "NUM";//可以往里面添加属性
 ```
 
 但注意，两个对象比较的时候，比较的是地址
 
 ```js
-var num1 = new Number(3);var num2 = new Number(3);// num1 != num2
+var num1 = new Number(3);
+var num2 = new Number(3);
+// num1 != num2
 ```
 
 因为是对象，就会存在下面这种问题：
 
 ```js
-var b = new Boolean(false);if(b){alert("我运行了");}//不管怎么样都会运行//因为if(b)当中，由于b是一个对象，转换为Boolean值都为true
+var b = new Boolean(false);
+if(b){alert("我运行了");}//不管怎么样都会运行
+//因为if(b)当中，由于b是一个对象，转换为Boolean值都为true
 ```
 
 
@@ -1245,13 +1543,33 @@ var  变量 = new RegExp( "正则表达式" , "匹配模式" )
 - **"g"**：全局匹配模式
 
 ```js
-var reg = new RegExp("a");//字符串是否含有avar reg = new RegExp("a","i");//字符串是否含有a或A
+var reg = new RegExp("a");//字符串是否含有a
+var reg = new RegExp("a","i");//字符串是否含有a或A
 ```
 
 简洁版：字面量
 
 ```js
-reg1 = /a/i;		//是否含有a或Areg2 = /a|b|c/;		//是否含有a或b或creg3 = /[abc]/; 	//是否含有a或b或creg4 = /[a-c]/; 	//是否含有a或b或creg5 = /[A-z]/;   	//是否含有字母reg6 = /1[abc]2/; 	//是否含有1a2或1b2或1c2reg7 = /[^abc]/; 	//只要有除了a或b或c就行reg8 = /(ab){3}/;	//是否含有abababreg9 = /ab{3}/;		//是否含有abbbree1 = /ab{1,3}c/;	//是否含有abc或abbc或abbbcree2 = /ab*c/;		//*相当于{0,} ->是否含有ac或abc或abbc……ree3 = /ab+c/;		//+相当于{1,} ->是否含有abc或abbc或abbbc……ree4 = /ab?c/;		//?相当于{0,1} ->是否含有ac或abcree5 = /^a/;		//^表示开头 ->是否以a开头ree6 = /a$/;		//$表示开头 ->是否以a结尾ree7 = /./;			//.表示任意字符ree6 = /\./;		//是否有.phone = /^1[3-9][0-9]{9}$/email = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]){2,5}){1,2}$/;
+reg1 = /a/i;		//是否含有a或A
+reg2 = /a|b|c/;		//是否含有a或b或c
+reg3 = /[abc]/; 	//是否含有a或b或c
+reg4 = /[a-c]/; 	//是否含有a或b或c
+reg5 = /[A-z]/;   	//是否含有字母
+reg6 = /1[abc]2/; 	//是否含有1a2或1b2或1c2
+reg7 = /[^abc]/; 	//只要有除了a或b或c就行
+reg8 = /(ab){3}/;	//是否含有ababab
+reg9 = /ab{3}/;		//是否含有abbb
+ree1 = /ab{1,3}c/;	//是否含有abc或abbc或abbbc
+ree2 = /ab*c/;		//*相当于{0,} ->是否含有ac或abc或abbc……
+ree3 = /ab+c/;		//+相当于{1,} ->是否含有abc或abbc或abbbc……
+ree4 = /ab?c/;		//?相当于{0,1} ->是否含有ac或abc
+ree5 = /^a/;		//^表示开头 ->是否以a开头
+ree6 = /a$/;		//$表示开头 ->是否以a结尾
+ree7 = /./;			//.表示任意字符
+ree6 = /\./;		//是否有.
+
+phone = /^1[3-9][0-9]{9}$/
+email = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]){2,5}){1,2}$/;
 ```
 
 \w 任意的数字+字母
@@ -1277,7 +1595,9 @@ reg1 = /a/i;		//是否含有a或Areg2 = /a|b|c/;		//是否含有a或b或creg3 = 
 检查一个字符串是否符合正则表达式的规则 返回 true/false
 
 ```js
-var reg = new RegExp("a");var str = "abc";var result = reg.test(str);//true
+var reg = new RegExp("a");
+var str = "abc";
+var result = reg.test(str);//true
 ```
 
 
@@ -1289,6 +1609,52 @@ var reg = new RegExp("a");var str = "abc";var result = reg.test(str);//true
 ### 表单全选和反选
 
 ```html
-<html>    <head>       <meta charset="GBK">            <title>                hello world            </title>            <script>                window.onload = function(){                    //全选                    var checkedAllBtn = document.getElementById("checkedAllBtn");                    checkedAllBtn.onclick = function(){                        //获取四个多选框items                        var items = document.getElementsByName("items");                        //遍历items                        for(var i=0;i<items.length;i++){                            items[i].checked=true;                        }                    };                    //反选                    var checkedRevBtn = document.getElementById("checkedRevBtn");                    checkedRevBtn.onclick = function(){                        //获取四个多选框items                        var items = document.getElementsByName("items");                        //遍历items                        for(var i=0;i<items.length;i++){                            items[i].checked=!items[i].checked;                        }                    };                }                            </script>    </head>    <body>        <!--表单-->        <form method = "post" action = "">            你喜欢的运动<!--<input type = "checkbox" id = "checkedAllBox"/>-->            <br />            <input type = "checkbox" name = "items" value = "篮球" />篮球            <input type = "checkbox" name = "items" value = "足球" />足球            <input type = "checkbox" name = "items" value = "排球" />排球            <input type = "checkbox" name = "items" value = "网球" />网球            <br />            <input type = "button" id="checkedAllBtn"   value = "全选" />            <input type = "button" id="checkedRevBtn"   value = "反选" />        </form>    </body></html>
+<html>
+    <head>
+       <meta charset="GBK">
+            <title>
+                hello world
+            </title>
+            <script>
+                window.onload = function(){
+                    //全选
+                    var checkedAllBtn = document.getElementById("checkedAllBtn");
+                    checkedAllBtn.onclick = function(){
+                        //获取四个多选框items
+                        var items = document.getElementsByName("items");
+                        //遍历items
+                        for(var i=0;i<items.length;i++){
+                            items[i].checked=true;
+                        }
+                    };
+                    //反选
+                    var checkedRevBtn = document.getElementById("checkedRevBtn");
+                    checkedRevBtn.onclick = function(){
+                        //获取四个多选框items
+                        var items = document.getElementsByName("items");
+                        //遍历items
+                        for(var i=0;i<items.length;i++){
+                            items[i].checked=!items[i].checked;
+                        }
+                    };
+                }
+                
+            </script>
+    </head>
+    <body>
+        <!--表单-->
+        <form method = "post" action = "">
+            你喜欢的运动<!--<input type = "checkbox" id = "checkedAllBox"/>-->
+            <br />
+            <input type = "checkbox" name = "items" value = "篮球" />篮球
+            <input type = "checkbox" name = "items" value = "足球" />足球
+            <input type = "checkbox" name = "items" value = "排球" />排球
+            <input type = "checkbox" name = "items" value = "网球" />网球
+            <br />
+            <input type = "button" id="checkedAllBtn"   value = "全选" />
+            <input type = "button" id="checkedRevBtn"   value = "反选" />
+        </form>
+    </body>
+</html>
 ```
 
